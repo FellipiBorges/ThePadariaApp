@@ -1,191 +1,54 @@
-import 'package:flutter/material.dart';
+<h1 align="center">🍞 The Padaria App</h1>
 
-void main() {
-  runApp(const MyApp());
-}
+<p align="center">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" alt="status">
+  <img src="https://img.shields.io/badge/Flutter-Framework-blue" alt="flutter">
+  <img src="https://img.shields.io/badge/Dart-Language-blueviolet" alt="dart">
+</p>
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+<p align="center">
+  Um app simples criado para exibir produtos de uma padaria, com seus respectivos preços — desenvolvido como parte de um trabalho acadêmico da Estácio.
+</p>
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Padaria App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
-        useMaterial3: true,
-      ),
-      home: const PadariaHomePage(title: 'Nossa Padaria'),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
+<hr>
 
-class ProdutoPadaria {
-  final String nome;
-  final double preco;
-  final String imagem;
-  final IconData icone;
+<h2>📋 Tabela de Conteúdos</h2>
+<ul>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#tecnologias">Tecnologias</a></li>
+  <li><a href="#layout">Layout</a></li>
+  <li><a href="#status">Status do Projeto</a></li>
+  <li><a href="#autor">Autor</a></li>
+</ul>
 
-  ProdutoPadaria({
-    required this.nome, 
-    required this.preco, 
-    required this.imagem,
-    this.icone = Icons.bakery_dining,
-  });
-}
+<h2 id="sobre">📖 Sobre</h2>
+<p>
+  <strong>The Padaria App</strong> foi desenvolvido como parte de um projeto acadêmico do curso de Análise e Desenvolvimento de Sistemas na Estácio. O objetivo foi aplicar conhecimentos básicos em Flutter para construir uma interface simples que lista produtos de uma padaria com seus respectivos preços.
+</p>
 
-class PadariaHomePage extends StatelessWidget {
-  const PadariaHomePage({super.key, required this.title});
+<h2 id="tecnologias">🧪 Tecnologias</h2>
+<ul>
+  <li><strong>Linguagem:</strong> Dart</li>
+  <li><strong>Framework:</strong> Flutter</li>
+</ul>
 
-  final String title;
+<h2 id="layout">🖼️ Layout</h2>
+<p>
+  A interface foi construída com simplicidade, exibindo os produtos em formato de lista, com nome e valor. A ideia é que seja um MVP (produto mínimo viável) para evoluções futuras.
+</p>
 
-  @override
-  Widget build(BuildContext context) {
-    // Lista de produtos da padaria com ícones variados
-    final List<ProdutoPadaria> produtos = [
-      ProdutoPadaria(
-        nome: 'Pão Francês', 
-        preco: 0.75, 
-        imagem: 'assets/pao_frances.jpg',
-        icone: Icons.breakfast_dining,
-      ),
-      ProdutoPadaria(
-        nome: 'Croissant', 
-        preco: 5.50, 
-        imagem: 'assets/croissant.jpg',
-        icone: Icons.bakery_dining,
-      ),
-      ProdutoPadaria(
-        nome: 'Bolo de Chocolate', 
-        preco: 35.90, 
-        imagem: 'assets/bolo_chocolate.jpg',
-        icone: Icons.cake,
-      ),
-      ProdutoPadaria(
-        nome: 'Rosquinha', 
-        preco: 3.25, 
-        imagem: 'assets/rosquinha.jpg',
-        icone: Icons.donut_small,
-      ),
-      ProdutoPadaria(
-        nome: 'Pão de Queijo', 
-        preco: 2.50, 
-        imagem: 'assets/pao_queijo.jpg',
-        icone: Icons.egg_alt,
-      ),
-      ProdutoPadaria(
-        nome: 'Sonho', 
-        preco: 4.75, 
-        imagem: 'assets/sonho.jpg',
-        icone: Icons.fastfood,
-      ),
-    ];
+<!-- Você pode inserir imagens do app aqui -->
+<!-- <p align="center">
+  <img src="caminho/para/imagem1.png" width="250"/>
+  <img src="caminho/para/imagem2.png" width="250"/>
+</p> -->
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Produtos Disponíveis',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.75,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                ),
-                itemCount: produtos.length,
-                itemBuilder: (context, index) {
-                  return _buildProdutoCard(context, produtos[index]);
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+<h2 id="status">🚧 Status do Projeto</h2>
+<p>
+  Em desenvolvimento. Novas funcionalidades podem ser adicionadas futuramente, como carrinho de compras e tela de detalhes do produto.
+</p>
 
-  Widget _buildProdutoCard(BuildContext context, ProdutoPadaria produto) {
-    return Card(
-      elevation: 4,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.amber.shade100,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(4),
-                  topRight: Radius.circular(4),
-                ),
-              ),
-              child: Center(
-                child: Icon(produto.icone, size: 64, color: Colors.brown),
-                // Quando tiver as imagens reais, use:
-                // Image.asset(produto.imagem, fit: BoxFit.cover)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  produto.nome,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'R\$ ${produto.preco.toStringAsFixed(2)}',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green[700],
-                  ),
-                ),
-                const SizedBox(height: 8),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('${produto.nome} adicionado ao carrinho!'),
-                          duration: const Duration(seconds: 1),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.brown,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                    ),
-                    child: const Text('Comprar'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+<h2 id="autor">👨‍🍳 Autor</h2>
+<p>
+  Desenvolvido por Fellipi Borges no contexto da disciplina de Desenvolvimento de Aplicações Mobile.
+</p>

@@ -37,11 +37,10 @@
   A interface foi construída com simplicidade, exibindo os produtos em formato de lista, com nome e valor. A ideia é que seja um MVP (produto mínimo viável) para evoluções futuras.
 </p>
 
-<!-- Você pode inserir imagens do app aqui -->
-<!-- <p align="center">
-  <img src="caminho/para/imagem1.png" width="250"/>
-  <img src="caminho/para/imagem2.png" width="250"/>
-</p> -->
+<p align="center">
+  ![Celular](https://github.com/user-attachments/assets/6ce43ff2-b201-4a1a-9c71-9a8a8f0605a1)
+
+</p>
 
 <h2 id="status">🚧 Status do Projeto</h2>
 <p>
@@ -50,5 +49,5 @@
 
 <h2 id="autor">👨‍🍳 Autor</h2>
 <p>
-  Desenvolvido por Fellipi Borges no contexto da disciplina de Desenvolvimento de Aplicações Mobile.
+  Desenvolvido por estudantes da Estácio no contexto da disciplina de Desenvolvimento de Aplicações Mobile.
 </p>

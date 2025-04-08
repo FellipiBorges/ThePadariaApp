@@ -37,11 +37,6 @@
   A interface foi construída com simplicidade, exibindo os produtos em formato de lista, com nome e valor. A ideia é que seja um MVP (produto mínimo viável) para evoluções futuras.
 </p>
 
-<p align="center">
-  ![Celular](https://github.com/user-attachments/assets/6ce43ff2-b201-4a1a-9c71-9a8a8f0605a1)
-
-</p>
-
 <h2 id="status">🚧 Status do Projeto</h2>
 <p>
   Em desenvolvimento. Novas funcionalidades podem ser adicionadas futuramente, como carrinho de compras e tela de detalhes do produto.
@@ -49,5 +44,5 @@
 
 <h2 id="autor">👨‍🍳 Autor</h2>
 <p>
-  Desenvolvido por estudantes da Estácio no contexto da disciplina de Desenvolvimento de Aplicações Mobile.
+  Desenvolvido por Fellipi Borges no contexto da disciplina de Desenvolvimento de Aplicações Mobile.
 </p>
